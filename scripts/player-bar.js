@@ -13,20 +13,11 @@ $(function(){
     if (nextSongIndex >= album.songs.length) { return; }
 
     const nextSong = album.songs[nextSongIndex];
+    $('#time-control .total-time').text(nextSong.duration);
     player.playPause(nextSong);
   });
 
   $('#play-pause').click(function(){
-    const currentSongTotalTime = player.getDuration();
-    $('#time-control .total-time').text(currentSongTotalTime);
-  });
-
-  $('#next').click(function(){
-    const currentSongTotalTime = player.getDuration();
-    $('#time-control .total-time').text(currentSongTotalTime);
-  });
-
-  $('#previous').click(function(){
     const currentSongTotalTime = player.getDuration();
     $('#time-control .total-time').text(currentSongTotalTime);
   });
