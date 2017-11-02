@@ -29,4 +29,16 @@ $(function(){
     $('#time-control input').val(percent);
   }, 1000);
 
+  $('#previous').click(function(){
+    if (player.playState !== 'playing') { return; }
+
+    const currentSongIndex = album.songs.indexOf(player.currentlyPlaying);
+    const prevSongIndex = currentSongIndex - 1;
+    if (prevSongIndex < 0) { return; }
+
+    const prevSong = album.songs[prevSongIndex];
+    player.playPause(prevSong);
+  });
+
+
 });
