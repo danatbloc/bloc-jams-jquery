@@ -2,7 +2,7 @@ $(function(){
 
   $('#play-pause').click(function(){
     player.playPause();
-    $(this).attr('playState',player.playState);
+    $(this).attr('playState', player.playState);
   });
 
   $('#next').click(function(){
