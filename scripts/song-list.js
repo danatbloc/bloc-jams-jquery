@@ -10,13 +10,14 @@ $(function(){
           </button>
         </td>
         <td>${song.title}</td>
-        <td>${song.duration}</td>
+        <td>${player.prettyTime(parseInt(song.duration))}</td>
       </tr>
     `);
 
     song.element.click ( event => {
       player.playPause(song);
       $('#play-pause').attr('playState', player.playState);
+      $('#time-control .total-time').text(player.prettyTime(parseInt(song.duration)));
     });
 
     $('#song-list').append(song.element);
